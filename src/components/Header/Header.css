@@ -1,0 +1,73 @@
+.material-icons-outlined {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+.main_bold{
+    font-weight: 700;
+}
+
+header{ 
+    width: 100%;
+    margin: 0 auto;
+    background-color: #DDDECC ;
+    border-bottom: 2px solid #233B36;
+    position: fixed;
+    z-index: 999;
+}
+header h2{
+    padding: 5px 0 5px;                         /*9px*/
+    border-right: 2px solid #233B36 ;
+    float: left;
+}
+header nav .logo{
+    width: 100px;
+    height: 56px;
+    background: url(../images/logo.png) no-repeat;
+    display: block;
+    padding-right: 24px;
+    text-indent: -9999em;
+}
+.nav_menu{
+    float: right;
+}
+.nav_menu li{
+    font-family: 'Roboto', sans-serif;
+    float: left;
+    text-transform: uppercase;
+}
+.nav_menu li a{
+    color: #233B36;
+    padding: 0 25px;
+    line-height: 66px;                          /*72px*/
+    font-size: 14px;
+    display: block;
+}
+.nav_menu li a:hover{
+    background: #F3F4E6;
+    opacity: .8;
+    transition: 0.8s;
+}
+.nav_menu li:last-child{
+    padding: 0 0;
+}
+.nav_menu .nav_icon{
+    line-height: 66px;
+    float: left;
+}
