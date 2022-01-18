@@ -1,5 +1,41 @@
 import React from "react";
 
+const navList = () => {
+  return (
+    <ul className="nav_menu">
+      <navListItem path="/" navTitle="VC A" />
+      <navListItem path="/jewerly" navTitle="jewelry" />
+      <navListItem path="/bridal" navTitle="bridal" />
+      <navListItem path="/watch" navTitle="watch" />
+      <navListItem path="/contact" navTitle="contact" />
+
+      <li>
+        <a href="">
+          <i class="nav_icon material-icons-outlined">search</i>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="nav_icon material-icons-outlined">account_circle</i>
+        </a>
+      </li>
+    </ul>
+  );
+};
+
+const navListItem = ({ path, navTitle }) => {
+  return (
+    <li>
+      <NavLink
+        to={path}
+        className={({ isActive }) => (isActive ? "main_bold" : "")}
+      >
+        {navTitle}
+      </NavLink>
+    </li>
+  );
+};
+
 const Header = () => {
   return (
     <>
@@ -10,35 +46,7 @@ const Header = () => {
               Van Cleef & Arpel
             </a>
           </h2>
-          <ul class="nav_menu">
-            <li>
-              <a href="" class="main_bold">
-                VC A
-              </a>
-            </li>
-            <li>
-              <a href="">jewelry</a>
-            </li>
-            <li>
-              <a href="">BRADAL</a>
-            </li>
-            <li>
-              <a href="">WATCH</a>
-            </li>
-            <li>
-              <a href="">CONTACT</a>
-            </li>
-            <li>
-              <a href="">
-                <i class="nav_icon material-icons-outlined">search</i>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="nav_icon material-icons-outlined">account_circle</i>
-              </a>
-            </li>
-          </ul>
+          <navList />
         </nav>
       </header>
     </>
