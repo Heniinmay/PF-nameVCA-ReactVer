@@ -1,13 +1,28 @@
 import React from "react";
+import './Header.css';
+import { Link, NavLink } from 'react-router-dom';
 
-const navList = () => {
+const menuList = [
+    {path: '/', navTitle:'VC A'},
+    {path: '/jewerly', navTitle:'jewerly'},
+    {path: '/bridal', navTitle:'bridal'},
+    {path: '/watch', navTitle:'watch'},
+    {path: '/contact', navTitle:'contact'},
+]
+
+const NavList = () => {
   return (
     <ul className="nav_menu">
-      <navListItem path="/" navTitle="VC A" />
-      <navListItem path="/jewerly" navTitle="jewelry" />
-      <navListItem path="/bridal" navTitle="bridal" />
-      <navListItem path="/watch" navTitle="watch" />
-      <navListItem path="/contact" navTitle="contact" />
+        {menuList.map((list, index)=>(
+            <NavListItem key={index} path={list.path} navTitle={list.navTitle} />
+
+        ))}
+
+      {/* <NavListItem path="/" navTitle="VC A" />
+      <NavListItem path="/jewerly" navTitle="jewelry" />
+      <NavListItem path="/bridal" navTitle="bridal" />
+      <NavListItem path="/watch" navTitle="watch" />
+      <NavListItem path="/contact" navTitle="contact" /> */}
 
       <li>
         <a href="">
@@ -23,7 +38,7 @@ const navList = () => {
   );
 };
 
-const navListItem = ({ path, navTitle }) => {
+const NavListItem = ({ path, navTitle }) => {
   return (
     <li>
       <NavLink
@@ -42,11 +57,11 @@ const Header = () => {
       <header>
         <nav class="container cf">
           <h2>
-            <a href="index.html" class="logo">
+            <Link to="/" className="logo">
               Van Cleef & Arpel
-            </a>
+            </Link>
           </h2>
-          <navList />
+          <NavList />
         </nav>
       </header>
     </>
