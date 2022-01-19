@@ -39,7 +39,7 @@ header h2{
 header nav .logo{
     width: 100px;
     height: 56px;
-    background: url(../images/logo.png) no-repeat;
+    background: url(../../assets/img/logo.png) no-repeat;
     display: block;
     padding-right: 24px;
     text-indent: -9999em;

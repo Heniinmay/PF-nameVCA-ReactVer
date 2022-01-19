@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
+import './index.css';
 import Layout from './components/Layout/Layout';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <browserRouter>
+    <BrowserRouter>
       <Layout />
-    </browserRouter>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
