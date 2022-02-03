@@ -1,6 +1,6 @@
 import React from "react";
-import './Header.css';
 import { Link, NavLink } from 'react-router-dom';
+// import './Header.css';
 
 const menuList = [
     {path: '/', navTitle:'VC A'},
@@ -15,7 +15,6 @@ const NavList = () => {
     <ul className="nav_menu">
         {menuList.map((list, index)=>(
             <NavListItem key={index} path={list.path} navTitle={list.navTitle} />
-
         ))}
 
       {/* <NavListItem path="/" navTitle="VC A" />
@@ -26,12 +25,12 @@ const NavList = () => {
 
       <li>
         <a href="">
-          <i class="nav_icon material-icons-outlined">search</i>
+          <i className="nav_icon material-icons-outlined">search</i>
         </a>
       </li>
       <li>
         <a href="">
-          <i class="nav_icon material-icons-outlined">account_circle</i>
+          <i className="nav_icon material-icons-outlined">account_circle</i>
         </a>
       </li>
     </ul>
@@ -53,9 +52,8 @@ const NavListItem = ({ path, navTitle }) => {
 
 const Header = () => {
   return (
-    <>
       <header>
-        <nav class="container cf">
+        <nav className="container cf">
           <h2>
             <Link to="/" className="logo">
               Van Cleef & Arpel
@@ -64,7 +62,6 @@ const Header = () => {
           <NavList />
         </nav>
       </header>
-    </>
   );
 };
 
