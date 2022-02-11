@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Index from "../../pages/Index";
 import './Banner.css';
 
 const banners = [
@@ -32,7 +33,7 @@ const banners = [
     left: {
       title: "frivole",
       content: "Like so many flowers dancing in the breeze.",
-      link: "#",
+      // link: "#",
     },
   }, //Slide3
 ];
@@ -104,7 +105,18 @@ const Banner = () => {
         ))}
       </ul>
       
-      <p className="pager"></p>
+      <p className="pager">
+        {banners.map((banner,index) => (
+          <Link
+            to="#"
+            className = { slideIdx - 1 === index ? 'active' : ''}
+            onClick={() => setSlideIdx(index + 1)}
+          >
+            {index}
+          </Link>
+        ))}
+      </p>
+
       <p className="controls">
         <Link to="" className="next">
           <i className="fas fa-angle-double-down"></i>
