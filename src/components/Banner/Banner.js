@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import './Banner.css';
 
 const banners = [
   {
@@ -37,9 +38,33 @@ const banners = [
 ];
 
 const Banner = () => {
+  const [slideIdx, setSlideIdx] = useState(1);
+  const [isMouseOver, setIsMouseOver] = useState(false);
+
+  useEffect(() => {
+    function loopSlider(){
+      return setTimeout(() => {
+        setSlideIdx(slideIdx + 1 > 3 ? 1 : slideIdx + 1);
+      },3500)
+    }
+    isMouseOver ? clearInterval(loopSlider) : loopSlider();
+
+    return clearInterval(loopSlider); //페이지가 바뀌면 ? 변경 / 페이지 전환시에 Timeout 프로세스를 바꿔준다.
+  });
+
+  const handleMouseLeave = () => {
+    // 빠져나오면
+    setIsMouseOver(false);
+  }
+
   return (
-    <div className="main_banner container">
-      <ul className="main_banner_slides">
+    <div className="main_banner container"
+      onMouseEnter = {()=>{
+        setIsMouseOver(true);
+      }}
+      onMouseLeave ={handleMouseLeave}
+    >
+      <ul className={`main_banner_slides top${slideIdx}`}>
         {banners.map((banner, index) => (
           <li key={index} className={`slide${index + 1}`}>
             <div className={`page ${banner.cn} container`}>
