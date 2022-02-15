@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Index from "../../pages/Index";
+import RefContext from "../../contexts/RefContext";
 import './Banner.css';
 
 const banners = [
@@ -41,6 +41,7 @@ const banners = [
 const Banner = () => {
   const [slideIdx, setSlideIdx] = useState(1);
   const [isMouseOver, setIsMouseOver] = useState(false);
+  const {collectionRef} = useContext(RefContext);
 
   useEffect(() => {
     function loopSlider(){
@@ -57,6 +58,12 @@ const Banner = () => {
     // 빠져나오면
     setIsMouseOver(false);
   }
+
+  const ScrollDown = () =>{
+    collectionRef.current.scrollIntoView({
+      behavior:'smooth',
+    });
+  };
 
   return (
     <div className="main_banner container"
@@ -118,7 +125,7 @@ const Banner = () => {
       </p>
 
       <p className="controls">
-        <Link to="" className="next">
+        <Link to="" className="next" onClick={ScrollDown}>
           <i className="fas fa-angle-double-down"></i>
         </Link>
       </p>
