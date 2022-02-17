@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RefContext from "../../contexts/RefContext";
-import Index from "../../pages/Index";
 import './Banner.css';
 
 const banners = [
